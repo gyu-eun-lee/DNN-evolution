@@ -8,6 +8,6 @@ Directory structure:
 │   │   ├── datasets
 │   │   ├── implementation1, implementation2, ... (implementations of ML/neural networks, starting from very basic and moving to complex)
 │   │   |   |── classifiers
-│   │   |   |   |── *various classifiers*
-│   │   |   |── *notebooks and utilities*
+│   │   |   |   |── (various classifiers)
+│   │   |   |── (notebooks and utilities)
 ```
