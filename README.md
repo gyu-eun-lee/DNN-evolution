@@ -6,8 +6,9 @@ Directory structure:
 ├── root
 │   ├── project1, project 2, ... (organized by common dataset and project goal)
 │   │   ├── datasets
-│   │   ├── implementation1, implementation2, ... (implementations of ML/neural networks, starting from very basic and moving to complex)
-│   │   |   |── classifiers
-│   │   |   |   |── (various classifiers)
+│   │   ├── example1, example2, ... (implementations of ML/neural networks, starting from very basic and moving to complex)
+│   │   |   |── implementation
+│   │   |   |   |── classifiers
+│   │   |   |   |── (model code)
 │   │   |   |── (notebooks and utilities)
 ```
