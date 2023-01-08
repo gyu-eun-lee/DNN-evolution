@@ -69,6 +69,47 @@ class KNearestNeighbor(object):
 
         return dists
 
+
+    def compute_distances_two_loops(self, X):
+        """
+        Compute the distance between each test point in X and each training point
+        in self.X_train using a nested loop over both the training data and the
+        test data.
+
+        Not used in notebook. Mainly here to provide readable version of
+        vectorized method.
+
+        Input / Output: Same as compute_distances_no_loops
+        """
+        num_test = X.shape[0]
+        num_train = self.X_train.shape[0]
+        dists = np.zeros((num_test, num_train))
+        for i in range(num_test):
+            for j in range(num_train):
+                # Compute the l2 distance between the ith test point and the
+                # jth training point, and store the result in dists[i, j].
+                dists[i,j] = np.sqrt(((X[i] - self.X_train[j])**2).sum())
+
+        return dists
+
+    def compute_distances_one_loop(self, X):
+        """
+        Compute the distance between each test point in X and each training point
+        in self.X_train using a single loop over the test data.
+
+        Not used in notebook. Mainly here to provide readable version of
+        vectorized method.
+
+        Input / Output: Same as compute_distances_no_loops
+        """
+        num_test = X.shape[0]
+        num_train = self.X_train.shape[0]
+        dists = np.zeros((num_test, num_train))
+        for i in range(num_test):
+            # Compute the l2 distance between the ith test point and all training points, and store the result in dists[i, :].
+            dists[i,:] = np.sqrt(np.sum((self.X_train - X[i,:])**2,axis=1))
+            
+        return dists
     def predict_labels(self, dists, k=1):
         """
         Given a matrix of distances between test points and training points,
